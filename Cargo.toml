@@ -8,6 +8,18 @@ license = "MIT"
 name = "bmp280-ehal"
 repository = "https://github.com/copterust/bmp280"
 version = "0.0.6"
+edition = "2024"
 
 [dependencies]
-embedded-hal = "0.2.1"
+embedded-hal = "1.0.0"
+
+[dependencies.defmt]
+version = "0.3"
+optional = true
+
+[features]
+default = []
+defmt-03 = [
+    "dep:defmt",
+    "embedded-hal/defmt-03",
+]
